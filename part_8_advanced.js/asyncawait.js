@@ -7,7 +7,7 @@ function fetchUserData(){
 }
 //fetchUserData().then().catch()
 
-async function getUserData(){
+export async function getUserData(){
     try {
         console.log("fetching user data..");
         const userData=await fetchUserData()
@@ -16,4 +16,4 @@ async function getUserData(){
         console.log("Error fetching data",error)
     }
 }
-getUserData()
+getUserData();
