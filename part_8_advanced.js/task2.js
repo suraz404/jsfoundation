@@ -26,6 +26,20 @@ function rateLimiter(fn, limit) {
       }
     };
   }
-  const now = Date.now();
-  console.log(now);
-  
+
+  //Write a function memoize(fn) that returns a memoized version of fn. 
+  //The memoized function should cache the results of function calls,
+  // and return the cached result if the same inputs are provided again
+  function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+      const key = JSON.stringify(args);
+      if (cache[key]) {
+        return cache[key];
+      } else {
+        const result = fn(...args);
+        cache[key] = result;
+        return result;
+      }
+    };
+  }
